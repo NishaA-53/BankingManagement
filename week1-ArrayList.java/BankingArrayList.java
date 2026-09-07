@@ -50,8 +50,12 @@ public class BankingArrayList {
                 System.out.print("Initial Balance: ");
                 double bal = sc.nextDouble();
 
-                list.add(new Account(no, name, bal));
-                System.out.println("Account created successfully!");
+                if (find(list, no) != null) {
+    System.out.println("Account number already exists!");
+} else {
+    list.add(new Account(no, name, bal));
+    System.out.println("Account created successfully!");
+}
             }
 
             else if (ch >= 2 && ch <= 4) {
